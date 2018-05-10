@@ -23,3 +23,10 @@ services:
       ELASTICSEARCH_URL: http://elasticsearch:9200
     depends_on:
          - elasticsearch
+   myjenkins: 
+    image: kayan/myjenkins:latest
+    ports: 
+     - "8082:8080"
+    volumes: 
+     - "./jobs:/var/jenkins_home/jobs/"
+     - "./m2deps:/var/jenkins_home/.m2/repository/" 
